@@ -1,1544 +1,979 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>MONKLIN × RAZOR × DITHER · TRINITY ENGINE</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>SUMI-E DAEMON // LIVE</title>
 <style>
-@font-face {
-  font-family: 'IBM VGA';
-  src: url('data:font/truetype;base64,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') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-      }
-      html,
-      body {
-      width: 100%;
-      height: 100dvh;
-      overflow: hidden;
-      background: #0d0c08;
-      color: #d6c8a8;
-      font-family: "IBM VGA", monospace;
-      overscroll-behavior: none;
-      }
-      #output {
-      display: block;
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-      }
-      #scanline-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 15;
-      mix-blend-mode: multiply;
-      opacity: 0.85;
-      }
-      #scanline-overlay.on {
-      display: block;
-      }
-      #vraw,
-      #glcanvas,
-      #proc,
-      #ditherOut,
-      #razorOut {
-      display: none;
-      }
-      #start-screen {
-      position: fixed;
-      inset: 0;
-      z-index: 50;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #0d0c08;
-      gap: 18px;
-      backdrop-filter: blur(2px);
-      }
-      #start-screen p {
-      font-size: 24px;
-      color: #5a5240;
-      letter-spacing: 0.2em;
-      text-align: center;
-      line-height: 2;
-      }
-      #start-btn {
-      border: 1.5px solid #e05a2e;
-      background: transparent;
-      color: #e05a2e;
-      font-family: inherit;
-      font-size: 12px;
-      letter-spacing: 0.2em;
-      padding: 12px 32px;
-      cursor: pointer;
-      transition: 0.1s;
-      }
-      #start-btn:active {
-      background: #e05a2e;
-      color: #0d0c08;
-      }
-      #fps {
-      position: fixed;
-      top: 12px;
-      right: 16px;
-      font-size: 10px;
-      color: #5a5542;
-      letter-spacing: 0.1em;
-      z-index: 12;
-      pointer-events: none;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 2px 8px;
-      border-radius: 20px;
-      backdrop-filter: blur(2px);
-      }
-      /* opacity control (above persistent bar) */
-      #opacity-control {
-      position: fixed;
-      bottom: 50px;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 44px;
-      background: rgba(12, 11, 8, 0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #2e2a1e;
-      z-index: 49;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding: 0 8px;
-      }
-      #opacity-control .opacity-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex: 1;
-      }
-      #opacity-control .opacity-right {
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      flex-shrink: 0;
-      }
-      #opacity-control .persist-label {
-      font-size: 12px;
-      color: #fff9f2;
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-      flex-shrink: 0;
-      }
-      #opacity-control input[type="range"] {
-      flex: 1;
-      max-width: 300px;
-      min-width: 150px;
-      height: 2px;
-      background: #2c281c;
-      border-radius: 2px;
-      }
-      #opacity-control .param-val {
-      font-size: 12px;
-      color: #fff9f2;
-      font-weight: bold;
-      min-width: 40px;
-      text-align: right;
-      flex-shrink: 0;
-      }
-      /* persistent action bar */
-      #persistent-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(12, 11, 8, 0.96);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid #2e2a1e;
-      z-index: 50;
-      display: flex;
-      align-items: center;
-      padding: 0 8px;
-      height: 50px;
-      gap: 6px;
-      padding-bottom: env(safe-area-inset-bottom, 0px);
-      overflow-x: auto;
-      white-space: nowrap;
-      }
-      .engine-tab {
-      background: transparent;
-      color: #7a7258;
-      border: none;
-      font-family: inherit;
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      padding: 8px 6px;
-      transition: 0.1s;
-      flex-shrink: 0;
-      }
-      .engine-tab.active {
-      color: #efdfb0;
-      border-bottom: 2px solid #e0a050;
-      font-weight: bold;
-      }
-      .persistent-toggles {
-      display: flex;
-      gap: 3px;
-      flex-shrink: 0;
-      }
-      .persistent-toggles .toggle-btn {
-      padding: 4px 6px;
-      font-size: 8px;
-      letter-spacing: 0.05em;
-      background: #1e1b12;
-      color: #7a7258;
-      border: 1px solid #3a3524;
-      border-radius: 2px;
-      white-space: nowrap;
-      cursor: pointer;
-      }
-      .persistent-toggles .toggle-btn.active {
-      background: #2c281c;
-      color: #fff9f2;
-      border-color: #e0a050;
-      }
-      .persist-label {
-      font-size: 8px;
-      color: #7a7258;
-      letter-spacing: 0.1em;
-      }
-      .btn-persist {
-      background: transparent;
-      border: 1px solid #3a3524;
-      color: #d6c8a8;
-      font-family: inherit;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      padding: 6px 10px;
-      cursor: pointer;
-      transition: 0.1s;
-      white-space: nowrap;
-      flex-shrink: 0;
-      }
-      .btn-persist.recording {
-      background: #e05a2e;
-      border-color: #e05a2e;
-      color: #fff;
-      animation: pulse 1s infinite;
-      }
-      .btn-persist:active {
-      background: #252116;
-      color: #fff9f2;
-      }
-      @keyframes pulse {
-      0% {
-      opacity: 1;
-      }
-      50% {
-      opacity: 0.5;
-      }
-      100% {
-      opacity: 1;
-      }
-      }
-      /* collapsible bottom sheet */
-      #bottom-sheet {
-      position: fixed;
-      bottom: 94px;
-      left: 0;
-      width: 100%;
-      z-index: 45;
-      transform: translateY(calc(100% - 28px));
-      transition: transform 0.32s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      max-height: 50vh;
-      display: flex;
-      flex-direction: column;
-      }
-      #bottom-sheet.open {
-      transform: translateY(0);
-      }
-      #pull-tab {
-      width: 80px;
-      height: 28px;
-      margin: 0 auto;
-      background: #17150e;
-      border: 1px solid #2e2a1e;
-      border-bottom: none;
-      border-radius: 12px 12px 0 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      font-weight: bold;
-      color: #6a6248;
-      letter-spacing: 0.2em;
-      cursor: pointer;
-      flex-shrink: 0;
-      }
-      #pull-tab:active {
-      background: #2c281c;
-      color: #e0c888;
-      }
-      #controls-grid {
-      background: rgba(12, 11, 8, 0.96);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid #2e2a1e;
-      padding: 18px 20px 12px;
-      overflow-y: auto;
-      flex: 1;
-      }
-      .control-section {
-      margin-bottom: 18px;
-      }
-      .section-title {
-      font-size: 9px;
-      color: #8a8268;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      border-bottom: 1px solid #262219;
-      padding-bottom: 4px;
-      }
-      .param-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-      }
-      .param-label {
-      font-size: 12px;
-      color: #fff9f2;
-      flex: 0 0 auto;
-      }
-      .param-val {
-      font-size: 11px;
-      color: #efdfb0;
-      font-weight: bold;
-      min-width: 35px;
-      text-align: right;
-      }
-      input[type="range"] {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 2px;
-      background: #2c281c;
-      border-radius: 2px;
-      outline: none;
-      cursor: pointer;
-      margin-bottom: 8px;
-      }
-      input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #efcf90;
-      border: none;
-      cursor: pointer;
-      transition: 0.05s linear;
-      }
-      input[type="range"]:active::-webkit-slider-thumb {
-      background: #ffa86e;
-      transform: scale(1.2);
-      }
-      .toggle-row {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 12px;
-      }
-      .toggle-btn {
-      flex: 1;
-      padding: 8px 0;
-      background: #0d0c08;
-      color: #7a7258;
-      border: 2px solid #5a5240;
-      font-family: inherit;
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      cursor: pointer;
-      transition: all 0.15s ease;
-      position: relative;
-      }
-      .toggle-btn:first-child {
-      border-radius: 4px 0 0 4px;
-      }
-      .toggle-btn:last-child {
-      border-radius: 0 4px 4px 0;
-      }
-      .toggle-btn:hover {
-      border-color: #7a7258;
-      }
-      .toggle-btn.active {
-      background: linear-gradient(135deg, #e05a2e 0%, #d94e1f 100%);
-      color: #fff9f2;
-      border-color: #ff6b3d;
-      box-shadow: 0 0 12px rgba(224, 90, 46, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.2);
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-      }
-      .checkbox-group {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-      }
-      .checkbox-group label {
-      font-size: 10px;
-      color: #d6c8a8;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      }
-      input[type="checkbox"] {
-      accent-color: #e0a050;
-      }
-      select {
-      font-family: IBM VGA;
-      font-size: 10px;
-      background: #1e1b12;
-      color: #fff9f2;
-      border: 1px solid #3a3524;
-      padding: 6px;
-      border-radius: 4px;
-      width: 100%;
-      margin-top: 4px;
-      cursor: pointer;
-      }
-      .engine-controls {
-      display: none;
-      }
-      .engine-controls.active {
-      display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <video id="vraw" autoplay="" playsinline="" muted=""></video>
-    <canvas id="glcanvas"></canvas>
-    <canvas id="proc"></canvas>
-    <canvas id="razorOut"></canvas>
-    <canvas id="ditherOut"></canvas>
+
+html, body {
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: #0d0c08;
+  color: #d6c8a8;
+  font-family: 'Share Tech Mono', monospace;
+  overscroll-behavior: none;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#canvas-wrap {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: relative;
+}
+
+#output {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+#start-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0d0c08;
+  gap: 18px;
+  backdrop-filter: blur(2px);
+}
+#start-screen p {
+  font-size: 11px;
+  color: #5a5240;
+  letter-spacing: 0.2em;
+  text-align: center;
+  line-height: 2;
+}
+#start-btn {
+  border: 1.5px solid #e05a2e;
+  background: transparent;
+  color: #e05a2e;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  padding: 12px 32px;
+  cursor: pointer;
+  transition: 0.1s linear;
+}
+#start-btn:active {
+  background: #e05a2e;
+  color: #0d0c08;
+}
+
+#fps {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 10px;
+  color: #5a5542;
+  letter-spacing: 0.1em;
+  z-index: 12;
+  pointer-events: none;
+  background: rgba(0,0,0,0.4);
+  padding: 2px 8px;
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+}
+
+#bottom-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 25;
+  transform: translateY(calc(100% - 48px - env(safe-area-inset-bottom, 0px)));
+  transition: transform 0.32s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+#bottom-sheet.open {
+  transform: translateY(0);
+}
+
+#pull-tab {
+  width: 80px;
+  height: 28px;
+  margin: 0 auto;
+  background: #17150e;
+  border: 1px solid #2e2a1e;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #6a6248;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  transition: 0.1s;
+}
+#pull-tab:active {
+  background: #2c281c;
+  color: #e0c888;
+}
+
+#controls {
+  background: rgba(12, 11, 8, 0.96);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid #2e2a1e;
+  padding: 18px 20px 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+  max-height: 30vh;
+  overflow-y: auto;
+}
+
+.param { display: flex; flex-direction: column; gap: 5px; }
+.param.full { grid-column: 1 / -1; }
+.param-header { display: flex; justify-content: space-between; align-items: baseline; }
+.param-label { font-size: 9px; color: #e1ffc7; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
+.param-val { font-size: 11px; color: #fed9ff; font-weight: bold; }
+
+input[type=range] {
+  -webkit-appearance: none; width: 100%; height: 2px; background: #2c281c; border-radius: 2px; outline: none; cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #efcf90; border: none; cursor: pointer; transition: 0.05s linear;
+}
+input[type=range]:active::-webkit-slider-thumb { background: #ffa86e; transform: scale(1.2); }
+input[type=range]::-moz-range-thumb {
+  width: 16px; height: 16px; border-radius: 50%; background: #efcf90; border: none; cursor: pointer; transition: 0.05s linear;
+}
+input[type=range]:active::-moz-range-thumb { background: #ffa86e; transform: scale(1.2); }
+
+/* dual-handle range track for low/high windows */
+.dual-range {
+  position: relative;
+  height: 22px;
+}
+.dual-range input[type=range] {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  background: transparent;
+}
+.dual-range input[type=range]::-webkit-slider-thumb { pointer-events: auto; }
+.dual-range input[type=range]::-moz-range-thumb { pointer-events: auto; }
+.dual-range .track {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2c281c;
+  border-radius: 2px;
+}
+.dual-range .fill {
+  position: absolute;
+  top: 10px;
+  height: 2px;
+  background: #efcf90;
+  border-radius: 2px;
+}
+
+#btn-row {
+  display: flex; background: rgba(12, 11, 8, 0.96); backdrop-filter: blur(8px); border-top: 1px solid #262219; padding-bottom: max(10px, env(safe-area-inset-bottom)); flex-wrap: wrap;
+}
+.btn {
+  flex: 1 1 0; min-width: 65px; border: none; border-right: 1px solid #262219; background: transparent; color: #7a7258; padding: 12px 0; font-size: 10px; font-family: 'Share Tech Mono', monospace; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: 0.05s linear;
+}
+.btn:last-child { border-right: none; }
+.btn:active { background: #252116; color: #ffefb0; }
+.btn.green { color: #6fa86f; }
+.btn.red   { color: #e05a2e; }
+.btn.orange { color: #efcf90; }
+.layer-label { grid-column: 1 / -1; font-size: 9px; color: #a89878; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; margin-bottom: -8px; padding-top: 4px; border-top: 1px solid #221f17; }
+.layer-label:first-child { border-top: none; padding-top: 0; }
+
+/* overblown slider accent for the break controls */
+.param.break .param-label { color: #ff9a5c; }
+.param.break .param-val   { color: #ff6b6b; }
+.param.break input[type=range] { background: #3a1a0a; }
+.param.break input[type=range]::-webkit-slider-thumb { background: #ff6b35; }
+.param.break input[type=range]:active::-webkit-slider-thumb { background: #ff3300; }
+
+#vraw { display: none; position: absolute; }
+
+#controls::-webkit-scrollbar { width: 4px; }
+#controls::-webkit-scrollbar-track { background: transparent; }
+#controls::-webkit-scrollbar-thumb { background: #4a4538; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="canvas-wrap">
     <canvas id="output"></canvas>
-    <div id="scanline-overlay"></div>
-    <div id="start-screen">
-      <p>
-        🗑️🔥WAVY_GRAVY🧇🥚
-        <br />
-        🥚in this trying time
-      </p>
-      <button id="start-btn">▶ *BEGIN TRIP*</button>
-    </div>
-    <span id="fps">– fps</span>
-    <!-- persistent action bar (always visible) -->
-    <!-- opacity slider with light/dark buttons on right -->
-    <div id="opacity-control">
-      <div class="opacity-left">
-        <span class="persist-label">OPAC</span>
-        <input type="range" id="sl-opacity" min="0.0001" max="0.025" step="0.0005" value="0.001" />
-        <span class="param-val" id="val-opacity">0.0005</span>
-      </div>
-      <div class="opacity-right">
-        <button class="toggle-btn" data-mode="lighter">LIGHT</button>
-        <button class="toggle-btn" data-mode="darker">DARK</button>
-        <button class="toggle-btn" data-mode="source-over">GHOST</button>
-      </div>
-    </div>
-    <!-- persistent action bar (always visible) -->
-    <div id="persistent-bar">
-      <button class="engine-tab active" data-engine="monklin">MONKLIN</button>
-      <button class="engine-tab" data-engine="razor">RAZOR</button>
-      <button class="engine-tab" data-engine="dither">DITHER</button>
-      <button id="btn-freeze" class="btn-persist">FREEZE</button>
-      <button id="btn-expose" class="btn-persist">REC</button>
-      <button id="btn-clear" class="btn-persist">CLR</button>
-      <button id="btn-save" class="btn-persist">SAVE</button>
-      <button id="btn-flip" class="btn-persist">FLIP</button>
-      <button id="btn-upload" class="btn-persist">UPLOAD</button>
-      <input type="file" id="file-input" accept="image/*" style="display: none;" />
-    </div>
-    <div id="bottom-sheet">
-      <div id="pull-tab">▴ UI</div>
-      <div id="controls-grid">
-        <!-- Monklin controls -->
-        <div id="monklin-controls" class="engine-controls active">
-          <div class="control-section">
-            <div class="section-title">SPATIAL SIGNAL</div>
-            <div class="toggle-row" id="signal-toggles">
-              <button class="toggle-btn active" data-mod="0">COS</button>
-              <button class="toggle-btn" data-mod="1">MOD</button>
-            </div>
-            <div class="checkbox-group">
-              <label>
-              <input type="checkbox" id="drift-enable" />
-              RGB DRIFT / TEAR
-              </label>
-            </div>
-            <div class="checkbox-group">
-              <label>
-              <input type="checkbox" id="wave-enable" />
-              WAVE FUNCTION
-              </label>
-            </div>
-          </div>
-          <div class="control-section">
-            <div class="section-title">PARAMETERS</div>
-            <div class="param-row">
-              <span class="param-label">PHASE</span>
-              <span class="param-val" id="val-phase">0.00</span>
-            </div>
-            <input type="range" id="sl-phase" min="0" max="2" step="0.01" value="0.0" />
-            <div class="param-row">
-              <span class="param-label">CONTRAST</span>
-              <span class="param-val" id="val-contrast">1.00</span>
-            </div>
-            <input type="range" id="sl-contrast" min="0" max="5" step="0.05" value="1.0" />
-            <div class="param-row">
-              <span class="param-label">DRIFT</span>
-              <span class="param-val" id="val-drift">0.00</span>
-            </div>
-            <input type="range" id="sl-drift" min="0" max="1" step="0.01" value="0.0" />
-            <div class="param-row">
-              <span class="param-label">TEAR</span>
-              <span class="param-val" id="val-tear">0.00</span>
-            </div>
-            <input type="range" id="sl-tear" min="0" max="5" step="0.05" value="0.0" />
-            <div class="param-row">
-              <span class="param-label">TIME SCALE</span>
-              <span class="param-val" id="val-time">1.00</span>
-            </div>
-            <input type="range" id="sl-time" min="0" max="5" step="0.1" value="1.0" />
-          </div>
-        </div>
-        <!-- Razor controls -->
-        <div id="razor-controls" class="engine-controls">
-          <div class="control-section">
-            <div class="section-title">PIXEL EDGE</div>
-            <div class="param-row">
-              <span class="param-label">PIXEL SIZE</span>
-              <span class="param-val" id="val-px">4</span>
-            </div>
-            <input type="range" id="sl-px" min="1" max="16" step="1" value="4" />
-            <div class="param-row">
-              <span class="param-label">COLOR BANDS</span>
-              <span class="param-val" id="val-bands">7</span>
-            </div>
-            <input type="range" id="sl-bands" min="2" max="16" step="1" value="7" />
-            <div class="param-row">
-              <span class="param-label">CONTRAST</span>
-              <span class="param-val" id="val-razor-contrast">1.0</span>
-            </div>
-            <input type="range" id="sl-razor-contrast" min="0.5" max="3.0" step="0.1" value="1.0" />
-            <div class="param-row">
-              <span class="param-label">SATURATION</span>
-              <span class="param-val" id="val-sat">1.0</span>
-            </div>
-            <input type="range" id="sl-sat" min="0" max="3.0" step="0.1" value="1.0" />
-          </div>
-        </div>
-        <!-- Dither controls (mirror removed) -->
-        <div id="dither-controls" class="engine-controls">
-          <div class="control-section">
-            <div class="section-title">DITHER SETTINGS</div>
-            <div class="param-row">
-              <span class="param-label">PIXEL SIZE</span>
-              <span class="param-val" id="val-dpx">4</span>
-            </div>
-            <input type="range" id="sl-dpx" min="1" max="16" step="1" value="4" />
-            <div class="param-row">
-              <span class="param-label">SPREAD</span>
-              <span class="param-val" id="val-spread">50</span>
-            </div>
-            <input type="range" id="sl-spread" min="0" max="130" step="5" value="50" />
-            <div class="param-row">
-              <span class="param-label">COLOR BANDS</span>
-              <span class="param-val" id="val-dbands">4</span>
-            </div>
-            <input type="range" id="sl-dbands" min="2" max="16" step="1" value="4" />
-            <div class="param-row">
-              <span class="param-label">CONTRAST</span>
-              <span class="param-val" id="val-dcontrast">1.0</span>
-            </div>
-            <input type="range" id="sl-dcontrast" min="0.5" max="3.0" step="0.1" value="1.0" />
-            <div class="param-row">
-              <span class="param-label">SCAN GAP</span>
-              <span class="param-val" id="val-sgap">4</span>
-            </div>
-            <input type="range" id="sl-sgap" min="2" max="14" step="1" value="4" />
-            <div class="param-row">
-              <span class="param-label">HUE SHIFT</span>
-              <span class="param-val" id="val-hue">0</span>
-            </div>
-            <input type="range" id="sl-hue" min="0" max="360" step="1" value="0" />
-            <div class="param-row"><span class="param-label">PALETTE</span></div>
-            <select id="s-mode">
-              <option value="bw">black &amp; white</option>
-              <option value="color" selected="">color dither</option>
-              <option value="gameboy">gameboy green</option>
-              <option value="amber">amber phosphor</option>
-              <option value="blueprint">blueprint</option>
-            </select>
-            <div style="margin-top: 12px">
-              <button id="btn-dither-reset" class="toggle-btn">RESET</button>
-              <button id="btn-scanlines" class="toggle-btn">SCAN ON</button>
-            </div>
-          </div>
+  </div>
+
+  <div id="start-screen">
+    <p>◢ SUMI-E DAEMON ◣<br>LIVE INK WASH<br>GHOST / BLOOM / STROKE</p>
+    <button id="start-btn">▶ LOAD CAMERA</button>
+  </div>
+
+  <span id="fps">– fps</span>
+
+  <div id="bottom-sheet">
+    <div id="pull-tab">▴ UI</div>
+
+    <div id="controls">
+
+      <div class="layer-label">◄ GHOST WASH ►</div>
+      <div class="param full">
+        <div class="param-header"><span class="param-label">tonal window</span><span class="param-val" id="v-g-range">0–130</span></div>
+        <div class="dual-range">
+          <div class="track"></div>
+          <div class="fill" id="fill-ghost"></div>
+          <input type="range" id="s-g-lo" min="0" max="255" step="1" value="0">
+          <input type="range" id="s-g-hi" min="0" max="255" step="1" value="130">
         </div>
       </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">blur</span><span class="param-val" id="v-g-blur">12</span></div>
+        <input type="range" id="s-g-blur" min="0" max="40" step="1" value="12">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">opacity</span><span class="param-val" id="v-g-op">0.18</span></div>
+        <input type="range" id="s-g-op" min="0" max="1" step="0.01" value="0.18">
+      </div>
+
+      <div class="layer-label">◄ MID BLOOM ►</div>
+      <div class="param full">
+        <div class="param-header"><span class="param-label">tonal window</span><span class="param-val" id="v-b-range">0–80</span></div>
+        <div class="dual-range">
+          <div class="track"></div>
+          <div class="fill" id="fill-bloom"></div>
+          <input type="range" id="s-b-lo" min="0" max="255" step="1" value="0">
+          <input type="range" id="s-b-hi" min="0" max="255" step="1" value="80">
+        </div>
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">blur</span><span class="param-val" id="v-b-blur">5</span></div>
+        <input type="range" id="s-b-blur" min="0" max="20" step="1" value="5">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">opacity</span><span class="param-val" id="v-b-op">0.10</span></div>
+        <input type="range" id="s-b-op" min="0" max="1" step="0.01" value="0.10">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">drift x</span><span class="param-val" id="v-b-dx">-1</span></div>
+        <input type="range" id="s-b-dx" min="-10" max="10" step="1" value="-1">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-val" id="v-b-dy">1</span><span class="param-label" style="text-align:right; margin-left:auto;">drift y</span></div>
+        <input type="range" id="s-b-dy" min="-10" max="10" step="1" value="1">
+      </div>
+
+      <div class="layer-label">◄ BLACK STROKES ►</div>
+      <div class="param full">
+        <div class="param-header"><span class="param-label">tonal window</span><span class="param-val" id="v-s-range">0–250</span></div>
+        <div class="dual-range">
+          <div class="track"></div>
+          <div class="fill" id="fill-stroke"></div>
+          <input type="range" id="s-s-lo" min="0" max="255" step="1" value="0">
+          <input type="range" id="s-s-hi" min="0" max="255" step="1" value="250">
+        </div>
+      </div>
+      <div class="param full">
+        <div class="param-header"><span class="param-label">edge mode</span><span class="param-val" id="v-edgemode">SOBEL</span></div>
+        <input type="range" id="s-edgemode" min="0" max="1" step="1" value="0">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">pre-blur</span><span class="param-val" id="v-s-preblur">1</span></div>
+        <input type="range" id="s-s-preblur" min="0" max="10" step="1" value="1">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">threshold</span><span class="param-val" id="v-s-thresh">20</span></div>
+        <input type="range" id="s-s-thresh" min="1" max="120" step="1" value="20">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">drift x</span><span class="param-val" id="v-s-dx">1</span></div>
+        <input type="range" id="s-s-dx" min="-10" max="10" step="1" value="1">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-val" id="v-s-dy">-1</span><span class="param-label" style="text-align:right; margin-left:auto;">drift y</span></div>
+        <input type="range" id="s-s-dy" min="-10" max="10" step="1" value="-1">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">drift cycles</span><span class="param-val" id="v-s-cyc">2</span></div>
+        <input type="range" id="s-s-cyc" min="0" max="6" step="1" value="2">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">pool intensity</span><span class="param-val" id="v-s-pool">0.9</span></div>
+        <input type="range" id="s-s-pool" min="0" max="2" step="0.05" value="0.9">
+      </div>
+
+      <div class="layer-label">◄ PAPER / OUTPUT ►</div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">paper white</span><span class="param-val" id="v-paper">252</span></div>
+        <input type="range" id="s-paper" min="180" max="255" step="1" value="252">
+      </div>
+      <div class="param">
+        <div class="param-header"><span class="param-label">contrast</span><span class="param-val" id="v-contrast">115</span></div>
+        <input type="range" id="s-contrast" min="80" max="200" step="1" value="115">
+      </div>
+      <div class="param full">
+        <div class="param-header"><span class="param-label">hanko seal</span><span class="param-val" id="v-hanko">ON</span></div>
+        <input type="range" id="s-hanko" min="0" max="1" step="1" value="1">
+      </div>
+      <div class="param full">
+        <div class="param-header"><span class="param-label">hanko symbol</span></div>
+        <input type="text" id="s-hanko-text" maxlength="12" value="龘" style="background:#17150e; border:1px solid #2e2a1e; color:#d6c8a8; font-family:'Share Tech Mono',monospace; font-size:14px; padding:6px 8px; border-radius:4px; outline:none; user-select:text;">
+      </div>
+
+      <div class="layer-label">◄ HANKO BREAK ►</div>
+      <div class="param break full">
+        <div class="param-header"><span class="param-label">symbol / box ratio</span><span class="param-val" id="v-hanko-ratio">62%</span></div>
+        <input type="range" id="s-hanko-ratio" min="5" max="200" step="1" value="62">
+      </div>
+      <div class="param break">
+        <div class="param-header"><span class="param-label">border width</span><span class="param-val" id="v-hanko-bw">5%</span></div>
+        <input type="range" id="s-hanko-bw" min="1" max="30" step="0.5" value="5">
+      </div>
+      <div class="param break">
+        <div class="param-header"><span class="param-label">ink opacity</span><span class="param-val" id="v-hanko-op">95%</span></div>
+        <input type="range" id="s-hanko-op" min="5" max="100" step="1" value="95">
+      </div>
+      <div class="param break">
+        <div class="param-header"><span class="param-label">symbol offset x</span><span class="param-val" id="v-hanko-ox">0</span></div>
+        <input type="range" id="s-hanko-ox" min="-100" max="100" step="1" value="0">
+      </div>
+      <div class="param break">
+        <div class="param-header"><span class="param-label">symbol offset y</span><span class="param-val" id="v-hanko-oy">0</span></div>
+        <input type="range" id="s-hanko-oy" min="-100" max="100" step="1" value="0">
+      </div>
+
     </div>
-    <script>
-      (function () {
-        // ---------- DOM ----------
-        const video = document.getElementById("vraw");
-        const glCanvas = document.getElementById("glcanvas");
-        const procCanvas = document.getElementById("proc");
-        const razorOutCanvas = document.getElementById("razorOut");
-        const ditherOutCanvas = document.getElementById("ditherOut");
-        const outCanvas = document.getElementById("output");
-        const ctx = outCanvas.getContext("2d", { alpha: false });
-        const gl = glCanvas.getContext("webgl");
-        const startScreen = document.getElementById("start-screen");
-        const bottomSheet = document.getElementById("bottom-sheet");
-        const pullTab = document.getElementById("pull-tab");
-        const fpsSpan = document.getElementById("fps");
-        const btnExpose = document.getElementById("btn-expose");
-        const btnClear = document.getElementById("btn-clear");
-        const btnSave = document.getElementById("btn-save");
-        const btnFlip = document.getElementById("btn-flip");
-        const btnUpload = document.getElementById("btn-upload");
-        const fileInput = document.getElementById("file-input");
-        const scanOverlay = document.getElementById("scanline-overlay");
-      
-        // Engine controls visibility
-        const monklinControls = document.getElementById("monklin-controls");
-        const razorControls = document.getElementById("razor-controls");
-        const ditherControls = document.getElementById("dither-controls");
-      
-        // ---------- GLOBAL STATE ----------
-        let currentEngine = "monklin";
-        let activeStream = null;
-        let animFrameId = null;
-        let isRecording = false;
-        let accumMode = "copy";
-        let frameCount = 0;
-        let time = 0,
-          lastFrameTime = performance.now();
-        let facingMode = "environment";
-        let monklinRunning = false,
-          razorRunning = false,
-          ditherRunning = false;
-        let isFrozen = false;
-        let frozenVideoCanvas = null;
-        let uploadedImageCanvas = null;
-        let isImageMode = false;
-        let modMode = 0;
-        let driftEnabled = false,
-          waveEnabled = false;
-        let ditherScanlinesActive = false;
-      
-        // FPS tracking
-        let fpsFrameCount = 0,
-          lastFpsTime = performance.now();
-      
-        // UI elements for parameter displays
-        const ui = {
-          opacity: document.getElementById("sl-opacity"),
-          phase: document.getElementById("sl-phase"),
-          contrast: document.getElementById("sl-contrast"),
-          drift: document.getElementById("sl-drift"),
-          tear: document.getElementById("sl-tear"),
-          timeSpd: document.getElementById("sl-time"),
-          px: document.getElementById("sl-px"),
-          bands: document.getElementById("sl-bands"),
-          rcontrast: document.getElementById("sl-razor-contrast"),
-          sat: document.getElementById("sl-sat"),
-          dpx: document.getElementById("sl-dpx"),
-          spread: document.getElementById("sl-spread"),
-          dbands: document.getElementById("sl-dbands"),
-          dcontrast: document.getElementById("sl-dcontrast"),
-          sgap: document.getElementById("sl-sgap"),
-          hue: document.getElementById("sl-hue"),
-          mode: document.getElementById("s-mode"),
-        };
-      
-        // ---- WebGL (Monklin) setup ----
-        
-// --- SHADER ARCHITECTURE (Spatial Engine) ---
-const vsSource = `
-    attribute vec2 a_position;
-    attribute vec2 a_texCoord;
-    varying vec2 v_texCoord;
-    void main() {
-        gl_Position = vec4(a_position, 0.0, 1.0);
-        v_texCoord = vec2(a_texCoord.x, 1.0 - a_texCoord.y);
+
+    <div id="btn-row">
+      <button class="btn" id="cam-btn">CAMERA</button>
+      <button class="btn orange" id="upload-btn">UPLOAD</button>
+      <button class="btn red" id="freeze-btn">FREEZE</button>
+      <button class="btn green" id="save-btn">SAVE</button>
+    </div>
+  </div>
+</div>
+
+<video id="vraw" autoplay playsinline muted></video>
+<input type="file" id="file-input" accept="image/*" style="display:none;">
+
+<script>
+  // ===== STATE & REFS =====
+  const outputCanvas = document.getElementById('output');
+  const oCtx = outputCanvas.getContext('2d', { alpha: false });
+  const video = document.getElementById('vraw');
+  const startScreen = document.getElementById('start-screen');
+  const startBtn = document.getElementById('start-btn');
+  const bottomSheet = document.getElementById('bottom-sheet');
+  const pullTab = document.getElementById('pull-tab');
+  const fpsSpan = document.getElementById('fps');
+
+  const offCanvas = document.createElement('canvas');
+  const offCtx = offCanvas.getContext('2d', { willReadFrequently: true });
+
+  let activeStream = null;
+  let animationRunning = true;
+  let frozen = false;
+  let frozenFrame = null;
+  let frameCount = 0;
+  let lastFpsTime = 0;
+
+  // Reusable buffers
+  let lumaBuf = null;
+  let blurTemp = null;
+  let ghostBuf = null;
+  let bloomBuf = null;
+  let bloomDrift = null;
+  let strokeBuf = null;
+  let strokeTemp = null;
+  let strokeDrift = null;
+  let sobelGx = null;
+  let sobelGy = null;
+  let poolBuf = null;
+  let outImgData = null;
+
+  // hanko drag state
+  let hankoX = null;
+  let hankoY = null;
+  let hankoSizeRatio = 0.09;
+
+  // ===== HELPERS =====
+
+  function extractLuma(src8, dstLuma) {
+    let j = 0;
+    for (let i = 0; i < src8.length; i += 4) {
+      dstLuma[j++] = (src8[i] * 77 + src8[i+1] * 150 + src8[i+2] * 29) >> 8;
     }
-`;
+  }
 
-const fsSource = `
-    precision mediump float;
-    varying vec2 v_texCoord;
-    uniform sampler2D u_image;
-    
-    uniform float u_time;
-    uniform float u_phase;
-    uniform float u_drift;
-    uniform float u_tear;
-    uniform float u_contrast;
-    uniform int u_modMode;
-
-    float random(vec2 st) { return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123); }
-    float noise(vec2 st) {
-        vec2 i = floor(st); vec2 f = fract(st);
-        float a = random(i); float b = random(i + vec2(1.0, 0.0));
-        float c = random(i + vec2(0.0, 1.0)); float d = random(i + vec2(1.0, 1.0));
-        vec2 u = f * f * (3.0 - 2.0 * f);
-        return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+  function fastBoxBlur(arr, temp, w, h, radius) {
+    const r = Math.floor(radius);
+    if (r < 1) return;
+    const invDiv = 1.0 / (2 * r + 1);
+    for (let y = 0; y < h; y++) {
+      let sum = 0;
+      const offset = y * w;
+      for (let i = -r; i <= r; i++) sum += arr[offset + Math.max(0, Math.min(w - 1, i))];
+      temp[offset] = (sum * invDiv) | 0;
+      for (let x = 1; x < w; x++) {
+        sum -= arr[offset + Math.max(0, x - r - 1)];
+        sum += arr[offset + Math.min(w - 1, x + r)];
+        temp[offset + x] = (sum * invDiv) | 0;
+      }
     }
-
-    vec2 getDrift(vec2 uv, float tOffset) {
-        vec2 drift = vec2(0.0);
-        float amp = 0.5;
-        vec2 st = uv * 4.0 + (u_time + tOffset) * 0.2; 
-        for (int i = 0; i < 4; i++) {
-            drift.x += (noise(st) - 0.5) * amp;
-            drift.y += (noise(st + vec2(100.0, -50.0)) - 0.5) * amp;
-            st *= 2.0; amp *= 0.5;
-        }
-        return drift;
+    for (let x = 0; x < w; x++) {
+      let sum = 0;
+      for (let i = -r; i <= r; i++) sum += temp[Math.max(0, Math.min(h - 1, i)) * w + x];
+      arr[x] = (sum * invDiv) | 0;
+      for (let y = 1; y < h; y++) {
+        sum -= temp[Math.max(0, y - r - 1) * w + x];
+        sum += temp[Math.min(h - 1, y + r) * w + x];
+        arr[y * w + x] = (sum * invDiv) | 0;
+      }
     }
+  }
 
-    void main() {
-        vec2 uv = v_texCoord;
-        float PI = 3.14159265359;
-        
-        // Amplified Chromatic Tearing: Scale both the time offset AND physical drift magnitude
-        vec2 driftR = getDrift(uv, 0.0) * u_drift;
-        vec2 driftG = getDrift(uv, u_tear * 2.0) * (u_drift + (u_tear * 0.05));
-        vec2 driftB = getDrift(uv, u_tear * 5.0) * (u_drift + (u_tear * 0.15));
-
-        vec2 uvR = abs(mod((uv + driftR) - 1.0, 2.0) - 1.0);
-        vec2 uvG = abs(mod((uv + driftG) - 1.0, 2.0) - 1.0);
-        vec2 uvB = abs(mod((uv + driftB) - 1.0, 2.0) - 1.0);
-
-        vec4 cR = texture2D(u_image, uvR);
-        vec4 cG = texture2D(u_image, uvG);
-        vec4 cB = texture2D(u_image, uvB);
-        vec3 col = vec3(cR.r, cG.g, cB.b);
-
-        // Hard Contrast Pipeline Pivot
-        col = (col - 0.5) * u_contrast + 0.5;
-        col = clamp(col, 0.0, 1.0); // Prevent negative logic bomb in the matrix
-
-        // Polarity Matrix
-        if (u_modMode == 1) {
-            col.r = mod(col.r + u_phase, 1.0);
-            col.g = mod(col.g + u_phase, 1.0);
-            col.b = mod(col.b + u_phase, 1.0);
-        } else {
-            col.r = 0.5 * (1.0 - cos(PI * (col.r + u_phase)));
-            col.g = 0.5 * (1.0 - cos(PI * (col.g + u_phase)));
-            col.b = 0.5 * (1.0 - cos(PI * (col.b + u_phase)));
-        }
-
-        gl_FragColor = vec4(col, 1.0);
+  function tonalMask(src, dst, lo, hi) {
+    for (let i = 0; i < src.length; i++) {
+      const v = src[i];
+      dst[i] = (v >= lo && v <= hi) ? v : 255;
     }
-`;
+  }
 
-      
-        function compileShader(gl, type, src) {
-          const s = gl.createShader(type);
-          gl.shaderSource(s, src);
-          gl.compileShader(s);
-          return s;
-        }
-        const prog = gl.createProgram();
-        gl.attachShader(prog, compileShader(gl, gl.VERTEX_SHADER, vsSource));
-        gl.attachShader(prog, compileShader(gl, gl.FRAGMENT_SHADER, fsSource));
-        gl.linkProgram(prog);
-        gl.useProgram(prog);
-      
-        const posBuf = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, posBuf);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
-        const posLoc = gl.getAttribLocation(prog, "a_position");
-        gl.enableVertexAttribArray(posLoc);
-        gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
-        const texBuf = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, texBuf);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([0, 0, 1, 0, 0, 1, 1, 1]), gl.STATIC_DRAW);
-        const texLoc = gl.getAttribLocation(prog, "a_texCoord");
-        gl.enableVertexAttribArray(texLoc);
-        gl.vertexAttribPointer(texLoc, 2, gl.FLOAT, false, 0, 0);
-        const texture = gl.createTexture();
-        gl.bindTexture(gl.TEXTURE_2D, texture);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-        const uniforms = {
-          time: gl.getUniformLocation(prog, "u_time"),
-          phase: gl.getUniformLocation(prog, "u_phase"),
-          drift: gl.getUniformLocation(prog, "u_drift"),
-          tear: gl.getUniformLocation(prog, "u_tear"),
-          contrast: gl.getUniformLocation(prog, "u_contrast"),
-          mod: gl.getUniformLocation(prog, "u_modMode"),
-          driftEnabled: gl.getUniformLocation(prog, "u_driftEnabled"),
-          waveEnabled: gl.getUniformLocation(prog, "u_waveEnabled"),
-        };
-      
-        // ---- Dither matrices and palettes ----
-        const BAYER_MATRIX = [
-          [0, 32, 8, 40, 2, 34, 10, 42],
-          [48, 16, 56, 24, 50, 18, 58, 26],
-          [12, 44, 4, 36, 14, 46, 6, 38],
-          [60, 28, 52, 20, 62, 30, 54, 22],
-          [3, 35, 11, 43, 1, 33, 9, 41],
-          [51, 19, 59, 27, 49, 17, 57, 25],
-          [15, 47, 7, 39, 13, 45, 5, 37],
-          [63, 31, 55, 23, 61, 29, 53, 21],
-        ].map((row) => row.map((v) => v / 64));
-        const MODES = {
-          bw: [
-            [15, 12, 10],
-            [240, 235, 220],
-          ],
-          gameboy: [
-            [15, 56, 15],
-            [48, 98, 48],
-            [139, 172, 15],
-            [155, 188, 15],
-          ],
-          amber: [
-            [20, 10, 0],
-            [80, 40, 0],
-            [180, 100, 0],
-            [255, 176, 0],
-          ],
-          blueprint: [
-            [10, 20, 60],
-            [30, 60, 140],
-            [80, 130, 210],
-            [200, 220, 255],
-          ],
-        };
-      
-        function hueShiftRGB(r, g, b, shiftDeg) {
-          if (shiftDeg === 0) return { r, g, b };
-          let rN = r / 255,
-            gN = g / 255,
-            bN = b / 255;
-          const max = Math.max(rN, gN, bN),
-            min = Math.min(rN, gN, bN);
-          let h,
-            s,
-            l = (max + min) / 2;
-          if (max === min) {
-            h = 0;
-            s = 0;
-          } else {
-            const d = max - min;
-            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-            switch (max) {
-              case rN:
-                h = (gN - bN) / d + (gN < bN ? 6 : 0);
-                break;
-              case gN:
-                h = (bN - rN) / d + 2;
-                break;
-              default:
-                h = (rN - gN) / d + 4;
-                break;
-            }
-            h /= 6;
-          }
-          let newHue = (h * 360 + shiftDeg) % 360;
-          if (newHue < 0) newHue += 360;
-          newHue /= 360;
-          let r2, g2, b2;
-          if (s === 0) {
-            r2 = g2 = b2 = l;
-          } else {
-            const hue2rgb = (p, q, t) => {
-              if (t < 0) t += 1;
-              if (t > 1) t -= 1;
-              if (t < 1 / 6) return p + (q - p) * 6 * t;
-              if (t < 1 / 2) return q;
-              if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-              return p;
-            };
-            const q = l < 0.5 ? l * (1 + s) : l + s - l * s,
-              p = 2 * l - q;
-            r2 = hue2rgb(p, q, newHue + 1 / 3);
-            g2 = hue2rgb(p, q, newHue);
-            b2 = hue2rgb(p, q, newHue - 1 / 3);
-          }
-          return {
-            r: Math.min(255, Math.max(0, Math.round(r2 * 255))),
-            g: Math.min(255, Math.max(0, Math.round(g2 * 255))),
-            b: Math.min(255, Math.max(0, Math.round(b2 * 255))),
-          };
-        }
-      
-        // ---- Camera ----
-        async function initCamera() {
-          if (activeStream) {
-            activeStream.getTracks().forEach((t) => t.stop());
-          }
-          try {
-            const stream = await navigator.mediaDevices.getUserMedia({
-              video: { facingMode: { exact: facingMode }, width: { ideal: 640 }, height: { ideal: 480 } },
-            });
-            activeStream = stream;
-            video.srcObject = stream;
-            await video.play();
-            startScreen.style.display = "none";
-            if (currentEngine === "monklin") startMonklinLoop();
-            else if (currentEngine === "razor") startRazorLoop();
-            else startDitherLoop();
-          } catch (e) {
-            try {
-              const fallback = await navigator.mediaDevices.getUserMedia({ video: { facingMode: facingMode } });
-              activeStream = fallback;
-              video.srcObject = fallback;
-              await video.play();
-              startScreen.style.display = "none";
-              if (currentEngine === "monklin") startMonklinLoop();
-              else if (currentEngine === "razor") startRazorLoop();
-              else startDitherLoop();
-            } catch (err) {
-              alert("Camera error: " + err.message);
-            }
-          }
-        }
-      
-        function flipCamera() {
-          facingMode = facingMode === "environment" ? "user" : "environment";
-          initCamera();
-        }
-      
-        function toggleFreeze() {
-          isFrozen = !isFrozen;
-          const btnFreeze = document.getElementById("btn-freeze");
-          if (isFrozen) {
-            frozenVideoCanvas = document.createElement("canvas");
-            frozenVideoCanvas.width = video.videoWidth || video.width;
-            frozenVideoCanvas.height = video.videoHeight || video.height;
-            const fvCtx = frozenVideoCanvas.getContext("2d");
-            fvCtx.drawImage(video, 0, 0);
-            btnFreeze.classList.add("recording");
-            btnFreeze.textContent = "UNFREEZE";
-          } else {
-            frozenVideoCanvas = null;
-            btnFreeze.classList.remove("recording");
-            btnFreeze.textContent = "FREEZE";
-          }
-        }
-      
-        // ---- Engine switching ----
-        function stopCurrentEngine() {
-          if (animFrameId) {
-            cancelAnimationFrame(animFrameId);
-            animFrameId = null;
-          }
-          monklinRunning = razorRunning = ditherRunning = false;
-        }
-      
-        function setEngine(engine) {
-          if (engine === currentEngine) return;
-          stopCurrentEngine();
-          currentEngine = engine;
-          document.querySelectorAll(".engine-tab").forEach((b) => b.classList.remove("active"));
-          document.querySelector(`.engine-tab[data-engine="${engine}"]`).classList.add("active");
-          monklinControls.classList.toggle("active", engine === "monklin");
-          razorControls.classList.toggle("active", engine === "razor");
-          ditherControls.classList.toggle("active", engine === "dither");
-          scanOverlay.classList.toggle("on", engine === "dither" && ditherScanlinesActive);
-          btnExpose.classList.toggle("recording", isRecording);
-          btnExpose.textContent = isRecording ? "STOP" : "REC";
-          if (isImageMode || video.readyState >= 2) {
-            if (engine === "monklin") startMonklinLoop();
-            else if (engine === "razor") startRazorLoop();
-            else startDitherLoop();
-          }
-        }
-      
-        function toggleRecording(force) {
-          if (accumMode === "copy" && force !== false) {
-            alert("Select LIGHT, DARK or GHOST to record accumulation.");
-            return;
-          }
-          isRecording = force !== undefined ? force : !isRecording;
-          btnExpose.classList.toggle("recording", isRecording);
-          btnExpose.textContent = isRecording ? "STOP" : "REC";
-          if (isRecording) frameCount = 0;
-        }
-      
-        // ---- Opacity helper ----
-        function getOpacity() {
-          return parseFloat(ui.opacity.value);
-        }
-      
-        // ---- Monklin loop ----
-        function monklinFrame(now) {
-          if (!monklinRunning || currentEngine !== "monklin") return;
-          if (!isImageMode && !isFrozen && video.readyState < 2) {
-            animFrameId = requestAnimationFrame(monklinFrame);
-            return;
-          }
-          let source;
-          let srcWidth, srcHeight;
-          if (isImageMode) {
-            source = uploadedImageCanvas;
-            srcWidth = uploadedImageCanvas.width;
-            srcHeight = uploadedImageCanvas.height;
-          } else {
-            source = isFrozen ? frozenVideoCanvas : video;
-            srcWidth = isFrozen ? frozenVideoCanvas.width : video.videoWidth;
-            srcHeight = isFrozen ? frozenVideoCanvas.height : video.videoHeight;
-          }
-          if (glCanvas.width !== srcWidth) {
-            glCanvas.width = srcWidth;
-            glCanvas.height = srcHeight;
-            gl.viewport(0, 0, glCanvas.width, glCanvas.height);
-          }
-          if (outCanvas.width !== window.innerWidth || outCanvas.height !== window.innerHeight) {
-            outCanvas.width = window.innerWidth;
-            outCanvas.height = window.innerHeight;
-          }
-          let dt = (now - lastFrameTime) * 0.001;
-          lastFrameTime = now;
-          time += dt * parseFloat(ui.timeSpd.value);
-      
-          gl.bindTexture(gl.TEXTURE_2D, texture);
-          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, source);
-          gl.uniform1f(uniforms.time, time);
-          gl.uniform1f(uniforms.phase, parseFloat(ui.phase.value));
-          gl.uniform1f(uniforms.drift, parseFloat(ui.drift.value));
-          gl.uniform1f(uniforms.tear, parseFloat(ui.tear.value));
-          gl.uniform1f(uniforms.contrast, parseFloat(ui.contrast.value));
-          gl.uniform1i(uniforms.mod, modMode);
-          gl.uniform1i(uniforms.driftEnabled, driftEnabled ? 1 : 0);
-          gl.uniform1i(uniforms.waveEnabled, waveEnabled ? 1 : 0);
-          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      
-          const dWidth = outCanvas.width,
-            dHeight = outCanvas.height;
-          const scale = Math.max(dWidth / glCanvas.width, dHeight / glCanvas.height);
-          const x = dWidth / 2 - (glCanvas.width / 2) * scale,
-            y = dHeight / 2 - (glCanvas.height / 2) * scale;
-          if (isRecording && accumMode !== "copy") {
-            ctx.globalAlpha = getOpacity();
-            ctx.globalCompositeOperation = accumMode;
-            ctx.drawImage(glCanvas, x, y, glCanvas.width * scale, glCanvas.height * scale);
-            frameCount++;
-          } else {
-            ctx.globalAlpha = 1.0;
-            ctx.globalCompositeOperation = "copy";
-            ctx.drawImage(glCanvas, x, y, glCanvas.width * scale, glCanvas.height * scale);
-            if (isRecording) frameCount++;
-          }
-          fpsFrameCount++;
-          if (now - lastFpsTime >= 10000) {
-            fpsSpan.textContent = fpsFrameCount + " fps";
-            fpsFrameCount = 0;
-            lastFpsTime = now;
-          }
-          animFrameId = requestAnimationFrame(monklinFrame);
-        }
-      
-        function startMonklinLoop() {
-          stopCurrentEngine();
-          monklinRunning = true;
-          lastFrameTime = performance.now();
-          animFrameId = requestAnimationFrame(monklinFrame);
-        }
-      
-        // ---- Razor loop ----
-        function razorFrame(now) {
-          if (!razorRunning || currentEngine !== "razor") return;
-          let source;
-          let vw, vh;
-          if (isImageMode) {
-            source = uploadedImageCanvas;
-            vw = uploadedImageCanvas.width;
-            vh = uploadedImageCanvas.height;
-          } else {
-            source = isFrozen ? frozenVideoCanvas : video;
-            vw = isFrozen ? frozenVideoCanvas.width : video.videoWidth;
-            vh = isFrozen ? frozenVideoCanvas.height : video.videoHeight;
-          }
-          const px = Math.max(1, Math.round(parseFloat(ui.px.value)));
-          const bands = Math.max(2, Math.round(parseFloat(ui.bands.value)));
-          const contrastVal = parseFloat(ui.rcontrast.value);
-          const satMult = parseFloat(ui.sat.value);
-          if (!vw || !vh) {
-            animFrameId = requestAnimationFrame(razorFrame);
-            return;
-          }
-          const sw = Math.max(1, Math.floor(vw / px)),
-            sh = Math.max(1, Math.floor(vh / px));
-          procCanvas.width = sw;
-          procCanvas.height = sh;
-          const pCtx = procCanvas.getContext("2d", { willReadFrequently: true });
-          pCtx.drawImage(source, 0, 0, sw, sh);
-          const srcData = pCtx.getImageData(0, 0, sw, sh).data;
-          const outWidth = sw * px,
-            outHeight = sh * px;
-          razorOutCanvas.width = outWidth;
-          razorOutCanvas.height = outHeight;
-          const rCtx = razorOutCanvas.getContext("2d");
-          const imgData = rCtx.createImageData(outWidth, outHeight);
-          const dst = imgData.data;
-          let contrastFactor = 1.0;
-          if (contrastVal !== 1.0)
-            contrastFactor = (259 * ((contrastVal - 1) * 255 + 255)) / (255 * (259 - (contrastVal - 1) * 255));
-          const step = 255 / (bands - 1);
-          const quantized = new Uint8Array(sw * sh * 4);
-          for (let y = 0; y < sh; y++)
-            for (let x = 0; x < sw; x++) {
-              const idx = (y * sw + x) * 4;
-              let r = srcData[idx],
-                g = srcData[idx + 1],
-                b = srcData[idx + 2];
-              if (contrastVal !== 1.0) {
-                r = Math.min(255, Math.max(0, contrastFactor * (r - 128) + 128));
-                g = Math.min(255, Math.max(0, contrastFactor * (g - 128) + 128));
-                b = Math.min(255, Math.max(0, contrastFactor * (b - 128) + 128));
-              }
-              const shifted = adjustSaturation(r, g, b, satMult);
-              quantized[idx] = Math.round(shifted.r / step) * step;
-              quantized[idx + 1] = Math.round(shifted.g / step) * step;
-              quantized[idx + 2] = Math.round(shifted.b / step) * step;
-              quantized[idx + 3] = 255;
-            }
-          const edges = new Uint8Array(sw * sh);
-          for (let y = 0; y < sh; y++)
-            for (let x = 0; x < sw; x++) {
-              const idx = (y * sw + x) * 4;
-              let e = false;
-              if (x < sw - 1) {
-                const n = idx + 4;
-                if (
-                  quantized[idx] !== quantized[n] ||
-                  quantized[idx + 1] !== quantized[n + 1] ||
-                  quantized[idx + 2] !== quantized[n + 2]
-                )
-                  e = true;
-              }
-              if (y < sh - 1) {
-                const d = ((y + 1) * sw + x) * 4;
-                if (
-                  quantized[idx] !== quantized[d] ||
-                  quantized[idx + 1] !== quantized[d + 1] ||
-                  quantized[idx + 2] !== quantized[d + 2]
-                )
-                  e = true;
-              }
-              edges[y * sw + x] = e ? 1 : 0;
-            }
-          for (let y = 0; y < sh; y++)
-            for (let x = 0; x < sw; x++) {
-              const srcIdx = (y * sw + x) * 4;
-              const bx = x * px,
-                by = y * px;
-              let r = quantized[srcIdx],
-                g = quantized[srcIdx + 1],
-                b = quantized[srcIdx + 2];
-              if (edges[y * sw + x]) {
-                r = 0;
-                g = 0;
-                b = 0;
-              }
-              for (let dy = 0; dy < px; dy++)
-                for (let dx = 0; dx < px; dx++) {
-                  const di = ((by + dy) * outWidth + (bx + dx)) * 4;
-                  dst[di] = r;
-                  dst[di + 1] = g;
-                  dst[di + 2] = b;
-                  dst[di + 3] = 255;
-                }
-            }
-          rCtx.putImageData(imgData, 0, 0);
-          if (outCanvas.width !== window.innerWidth || outCanvas.height !== window.innerHeight) {
-            outCanvas.width = window.innerWidth;
-            outCanvas.height = window.innerHeight;
-          }
-          const scale = Math.max(outCanvas.width / outWidth, outCanvas.height / outHeight);
-          const x = outCanvas.width / 2 - (outWidth / 2) * scale,
-            y = outCanvas.height / 2 - (outHeight / 2) * scale;
-          if (isRecording && accumMode !== "copy") {
-            ctx.globalAlpha = getOpacity();
-            ctx.globalCompositeOperation = accumMode;
-            ctx.drawImage(razorOutCanvas, x, y, outWidth * scale, outHeight * scale);
-            frameCount++;
-          } else {
-            ctx.globalAlpha = 1.0;
-            ctx.globalCompositeOperation = "copy";
-            ctx.drawImage(razorOutCanvas, x, y, outWidth * scale, outHeight * scale);
-            if (isRecording) frameCount++;
-          }
-          fpsFrameCount++;
-          if (now - lastFpsTime >= 1000) {
-            fpsSpan.textContent = fpsFrameCount + " fps";
-            fpsFrameCount = 0;
-            lastFpsTime = now;
-          }
-          animFrameId = requestAnimationFrame(razorFrame);
-        }
-      
-        function adjustSaturation(r, g, b, sat) {
-          const rN = r / 255,
-            gN = g / 255,
-            bN = b / 255;
-          const max = Math.max(rN, gN, bN),
-            min = Math.min(rN, gN, bN);
-          let h,
-            s,
-            l = (max + min) / 2;
-          if (max === min) {
-            h = 0;
-            s = 0;
-          } else {
-            const d = max - min;
-            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-            switch (max) {
-              case rN:
-                h = (gN - bN) / d + (gN < bN ? 6 : 0);
-                break;
-              case gN:
-                h = (bN - rN) / d + 2;
-                break;
-              default:
-                h = (rN - gN) / d + 4;
-                break;
-            }
-            h /= 6;
-          }
-          s = Math.min(1, s * sat);
-          let r2, g2, b2;
-          if (s === 0) {
-            r2 = g2 = b2 = l;
-          } else {
-            const hue2rgb = (p, q, t) => {
-              if (t < 0) t += 1;
-              if (t > 1) t -= 1;
-              if (t < 1 / 6) return p + (q - p) * 6 * t;
-              if (t < 1 / 2) return q;
-              if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-              return p;
-            };
-            const q = l < 0.5 ? l * (1 + s) : l + s - l * s,
-              p = 2 * l - q;
-            r2 = hue2rgb(p, q, h + 1 / 3);
-            g2 = hue2rgb(p, q, h);
-            b2 = hue2rgb(p, q, h - 1 / 3);
-          }
-          return {
-            r: Math.min(255, Math.max(0, Math.round(r2 * 255))),
-            g: Math.min(255, Math.max(0, Math.round(g2 * 255))),
-            b: Math.min(255, Math.max(0, Math.round(b2 * 255))),
-          };
-        }
-      
-        function startRazorLoop() {
-          stopCurrentEngine();
-          razorRunning = true;
-          animFrameId = requestAnimationFrame(razorFrame);
-        }
-      
-        // ---- Dither loop (mirror removed) ----
-        function ditherFrame(now) {
-          if (!ditherRunning || currentEngine !== "dither") return;
-          let source;
-          let vw, vh;
-          if (isImageMode) {
-            source = uploadedImageCanvas;
-            vw = uploadedImageCanvas.width;
-            vh = uploadedImageCanvas.height;
-          } else {
-            source = isFrozen ? frozenVideoCanvas : video;
-            vw = isFrozen ? frozenVideoCanvas.width : video.videoWidth;
-            vh = isFrozen ? frozenVideoCanvas.height : video.videoHeight;
-          }
-          const px = Math.max(1, Math.round(parseFloat(ui.dpx.value)));
-          const spread = parseFloat(ui.spread.value);
-          const bands = Math.max(2, Math.round(parseFloat(ui.dbands.value)));
-          const contrastVal = parseFloat(ui.dcontrast.value);
-          const colorMode = ui.mode.value;
-          const hueShiftDeg = parseFloat(ui.hue.value);
-          const usePalette = MODES[colorMode] || null;
-          if (!vw || !vh) {
-            animFrameId = requestAnimationFrame(ditherFrame);
-            return;
-          }
-          const sw = Math.max(1, Math.floor(vw / px)),
-            sh = Math.max(1, Math.floor(vh / px));
-          procCanvas.width = sw;
-          procCanvas.height = sh;
-          const pCtx = procCanvas.getContext("2d", { willReadFrequently: true });
-          // No mirror flip
-          pCtx.drawImage(source, 0, 0, sw, sh);
-          const srcData = pCtx.getImageData(0, 0, sw, sh).data;
-          const outWidth = sw * px,
-            outHeight = sh * px;
-          ditherOutCanvas.width = outWidth;
-          ditherOutCanvas.height = outHeight;
-          const dCtx = ditherOutCanvas.getContext("2d");
-          const imgData = dCtx.createImageData(outWidth, outHeight);
-          const dst = imgData.data;
-          let contrastFactor = 1.0;
-          if (contrastVal !== 1.0)
-            contrastFactor = (259 * ((contrastVal - 1) * 255 + 255)) / (255 * (259 - (contrastVal - 1) * 255));
-          for (let y = 0; y < sh; y++) {
-            for (let x = 0; x < sw; x++) {
-              const idx = (y * sw + x) * 4;
-              let r = srcData[idx],
-                g = srcData[idx + 1],
-                b = srcData[idx + 2];
-              if (contrastVal !== 1.0) {
-                r = Math.min(255, Math.max(0, contrastFactor * (r - 128) + 128));
-                g = Math.min(255, Math.max(0, contrastFactor * (g - 128) + 128));
-                b = Math.min(255, Math.max(0, contrastFactor * (b - 128) + 128));
-              }
-              const shifted = hueShiftRGB(r, g, b, hueShiftDeg);
-              r = shifted.r;
-              g = shifted.g;
-              b = shifted.b;
-              const bayerVal = BAYER_MATRIX[y % 8][x % 8];
-              const offset = (bayerVal - 0.5) * spread;
-              let fr, fg, fb;
-              if (usePalette) {
-                let lum = 0.299 * r + 0.587 * g + 0.114 * b + offset;
-                lum = Math.min(255, Math.max(0, lum));
-                const idxP = Math.min(usePalette.length - 1, Math.floor((lum / 256) * usePalette.length));
-                fr = usePalette[idxP][0];
-                fg = usePalette[idxP][1];
-                fb = usePalette[idxP][2];
-              } else if (colorMode === "color") {
-                fr = quantChannel(r, bands, offset);
-                fg = quantChannel(g, bands, offset);
-                fb = quantChannel(b, bands, offset);
-              } else {
-                let lum = 0.299 * r + 0.587 * g + 0.114 * b + offset;
-                const mono = lum > 127 ? 255 : 0;
-                fr = fg = fb = mono;
-              }
-              const bx = x * px,
-                by = y * px;
-              for (let dy = 0; dy < px; dy++)
-                for (let dx = 0; dx < px; dx++) {
-                  const di = ((by + dy) * outWidth + (bx + dx)) * 4;
-                  dst[di] = fr;
-                  dst[di + 1] = fg;
-                  dst[di + 2] = fb;
-                  dst[di + 3] = 255;
-                }
-            }
-          }
-          dCtx.putImageData(imgData, 0, 0);
-          if (outCanvas.width !== window.innerWidth || outCanvas.height !== window.innerHeight) {
-            outCanvas.width = window.innerWidth;
-            outCanvas.height = window.innerHeight;
-          }
-          const scale = Math.max(outCanvas.width / outWidth, outCanvas.height / outHeight);
-          const x = outCanvas.width / 2 - (outWidth / 2) * scale,
-            y = outCanvas.height / 2 - (outHeight / 2) * scale;
-          if (isRecording && accumMode !== "copy") {
-            ctx.globalAlpha = getOpacity();
-            ctx.globalCompositeOperation = accumMode;
-            ctx.drawImage(ditherOutCanvas, x, y, outWidth * scale, outHeight * scale);
-            frameCount++;
-          } else {
-            ctx.globalAlpha = 1.0;
-            ctx.globalCompositeOperation = "copy";
-            ctx.drawImage(ditherOutCanvas, x, y, outWidth * scale, outHeight * scale);
-            if (isRecording) frameCount++;
-          }
-          fpsFrameCount++;
-          if (now - lastFpsTime >= 1000) {
-            fpsSpan.textContent = fpsFrameCount + " fps";
-            fpsFrameCount = 0;
-            lastFpsTime = now;
-          }
-          animFrameId = requestAnimationFrame(ditherFrame);
-        }
-      
-        function quantChannel(val, bands, offset) {
-          const step = 255 / (bands - 1);
-          let adj = val + offset;
-          adj = Math.min(255, Math.max(0, adj));
-          return Math.min(255, Math.max(0, Math.round(adj / step) * step));
-        }
-      
-        function startDitherLoop() {
-          stopCurrentEngine();
-          ditherRunning = true;
-          lastFpsTime = performance.now();
-          animFrameId = requestAnimationFrame(ditherFrame);
-        }
-      
-        // ---- Scanline toggle ----
-        function toggleScanlines() {
-          ditherScanlinesActive = !ditherScanlinesActive;
-          if (currentEngine === "dither") scanOverlay.classList.toggle("on", ditherScanlinesActive);
-          document.getElementById("btn-scanlines").textContent = ditherScanlinesActive ? "SCAN OFF" : "SCAN ON";
-          updateScanlineStyle();
-        }
-      
-        function updateScanlineStyle() {
-          const gap = parseInt(ui.sgap.value, 10);
-          scanOverlay.style.background = `repeating-linear-gradient(0deg, transparent, transparent ${gap - 1}px, rgba(0,0,0,0.44) ${gap - 1}px, rgba(0,0,0,0.44) ${gap}px)`;
-        }
-      
-        // ---- UI event bindings ----
-        document.getElementById("start-btn").onclick = initCamera;
-        pullTab.onclick = () => bottomSheet.classList.toggle("open");
-        document.getElementById("btn-freeze").onclick = toggleFreeze;
-        btnFlip.onclick = flipCamera;
-        btnExpose.onclick = toggleRecording;
-        btnClear.onclick = () => {
-          ctx.clearRect(0, 0, outCanvas.width, outCanvas.height);
-          if (isRecording) toggleRecording(false);
-        };
-        btnSave.onclick = () => {
-          const a = document.createElement("a");
-          a.download = `hybrid_${Date.now()}.png`;
-          a.href = outCanvas.toDataURL("image/png");
-          a.click();
-        };
-        
-        btnUpload.onclick = () => {
-          fileInput.click();
-        };
-        
-        fileInput.addEventListener("change", (e) => {
-          const file = e.target.files[0];
-          if (!file) return;
-          const reader = new FileReader();
-          reader.onload = (event) => {
-            const img = new Image();
-            img.onload = () => {
-              uploadedImageCanvas = document.createElement("canvas");
-              uploadedImageCanvas.width = img.width;
-              uploadedImageCanvas.height = img.height;
-              const imgCtx = uploadedImageCanvas.getContext("2d");
-              imgCtx.drawImage(img, 0, 0);
-              isImageMode = true;
-              startScreen.style.display = "none";
-              bottomSheet.style.display = "block";
-              if (!monklinRunning && !razorRunning && !ditherRunning) {
-                setEngine("monklin");
-              }
-            };
-            img.src = event.target.result;
-          };
-          reader.readAsDataURL(file);
-        });
-      
-        document
-          .querySelectorAll(".engine-tab")
-          .forEach((btn) => btn.addEventListener("click", () => setEngine(btn.dataset.engine)));
-        
-        // Handle accumulation toggles in opacity control
-        document.getElementById("opacity-control").addEventListener("click", (e) => {
-          if (e.target.tagName !== "BUTTON" || !e.target.classList.contains("toggle-btn")) return;
-          if (e.target.classList.contains("active")) {
-            e.target.classList.remove("active");
-            accumMode = "copy";
-          } else {
-            document.querySelectorAll("#opacity-control .toggle-btn").forEach((b) => b.classList.remove("active"));
-            e.target.classList.add("active");
-            accumMode = e.target.dataset.mode;
-          }
-        });
-      
-        document.getElementById("signal-toggles").addEventListener("click", (e) => {
-          if (e.target.tagName !== "BUTTON") return;
-          document.querySelectorAll("#signal-toggles .toggle-btn").forEach((b) => b.classList.remove("active"));
-          e.target.classList.add("active");
-          modMode = parseInt(e.target.dataset.mod);
-        });
-        document.getElementById("drift-enable").addEventListener("change", (e) => (driftEnabled = e.target.checked));
-        document.getElementById("wave-enable").addEventListener("change", (e) => (waveEnabled = e.target.checked));
-      
-        // Opacity display
-        ui.opacity.addEventListener("input", () => {
-          document.getElementById("val-opacity").textContent = parseFloat(ui.opacity.value).toFixed(3);
-        });
-      
-        // Monklin slider displays
-        ["phase", "contrast", "drift", "tear", "time"].forEach((id) => {
-          document.getElementById(`sl-${id}`).addEventListener("input", function () {
-            document.getElementById(`val-${id}`).textContent = parseFloat(this.value).toFixed(2);
-          });
-        });
-        // Razor slider displays
-        ["px", "bands"].forEach((id) =>
-          document.getElementById(`sl-${id}`).addEventListener("input", function () {
-            document.getElementById(`val-${id}`).textContent = this.value;
-          }),
+  function blendDarkenOnto(paper, layer, opacity) {
+    for (let i = 0; i < paper.length; i++) {
+      const ink = Math.min(1, ((255 - layer[i]) / 255) * opacity);
+      paper[i] = paper[i] * (1 - ink);
+    }
+  }
+
+  function offsetDarker(src, dst, w, h, dx, dy) {
+    for (let y = 0; y < h; y++) {
+      const sy = Math.max(0, Math.min(h - 1, y - dy));
+      for (let x = 0; x < w; x++) {
+        const sx = Math.max(0, Math.min(w - 1, x - dx));
+        const a = src[y * w + x];
+        const b = src[sy * w + sx];
+        dst[y * w + x] = a < b ? a : b;
+      }
+    }
+  }
+
+  function sobelMagnitude(src, gx, gy, dst, w, h) {
+    const tmpMag = sobelMagnitude._tmp || (sobelMagnitude._tmp = new Float32Array(w * h));
+    let maxMag = 0;
+    for (let y = 0; y < h; y++) {
+      for (let x = 0; x < w; x++) {
+        const xm1 = Math.max(0, x - 1), xp1 = Math.min(w - 1, x + 1);
+        const ym1 = Math.max(0, y - 1), yp1 = Math.min(h - 1, y + 1);
+        const tl = src[ym1 * w + xm1], tc = src[ym1 * w + x], tr = src[ym1 * w + xp1];
+        const ml = src[y   * w + xm1],                        mr = src[y   * w + xp1];
+        const bl = src[yp1 * w + xm1], bc = src[yp1 * w + x], br = src[yp1 * w + xp1];
+        const sx = (tr + 2*mr + br) - (tl + 2*ml + bl);
+        const sy = (bl + 2*bc + br) - (tl + 2*tc + tr);
+        const mag = Math.sqrt(sx*sx + sy*sy);
+        tmpMag[y * w + x] = mag;
+        if (mag > maxMag) maxMag = mag;
+      }
+    }
+    const scale = maxMag > 0 ? 255 / maxMag : 0;
+    for (let i = 0; i < w * h; i++) dst[i] = (tmpMag[i] * scale) | 0;
+  }
+
+  function fastEdge(src, temp, dst, w, h, radius) {
+    dst.set(src);
+    fastBoxBlur(dst, temp, w, h, radius);
+    let maxMag = 0;
+    const tmpMag = fastEdge._tmp || (fastEdge._tmp = new Float32Array(w * h));
+    for (let i = 0; i < w * h; i++) {
+      const d = Math.abs(src[i] - dst[i]) * 4;
+      tmpMag[i] = d;
+      if (d > maxMag) maxMag = d;
+    }
+    const scale = maxMag > 0 ? 255 / maxMag : 0;
+    for (let i = 0; i < w * h; i++) dst[i] = Math.min(255, (tmpMag[i] * scale)) | 0;
+  }
+
+  function getHankoBox(w, h) {
+    const size = Math.max(w, h) * hankoSizeRatio;
+    const pad = 28;
+    let x, y;
+    if (hankoX === null || hankoY === null) {
+      x = w - size - pad;
+      y = h - size - pad;
+    } else {
+      x = hankoX * w - size / 2;
+      y = hankoY * h - size / 2;
+    }
+    return { x, y, size };
+  }
+
+  function drawHanko(ctx, w, h) {
+    const { x, y, size } = getHankoBox(w, h);
+
+    // read break controls
+    const symbolRatio  = parseInt(document.getElementById('s-hanko-ratio').value) / 100;
+    const borderWidthPct = parseFloat(document.getElementById('s-hanko-bw').value) / 100;
+    const inkOpacity   = parseInt(document.getElementById('s-hanko-op').value) / 100;
+    const offsetX      = parseInt(document.getElementById('s-hanko-ox').value);
+    const offsetY      = parseInt(document.getElementById('s-hanko-oy').value);
+
+    const inkColor = `rgba(175, 20, 20, ${inkOpacity})`;
+    const bw = Math.max(1.5, size * borderWidthPct);
+
+    ctx.strokeStyle = inkColor;
+    ctx.lineWidth = bw;
+    ctx.strokeRect(x + bw/2, y + bw/2, size - bw, size - bw);
+
+    const symbol = document.getElementById('s-hanko-text').value || '龘';
+    const chars = [...symbol];
+    const fontSize = size * symbolRatio;
+
+    ctx.fillStyle = inkColor;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    const cx = x + size / 2 + offsetX;
+    const cy = y + size / 2 + offsetY;
+
+    if (chars.length <= 1) {
+      ctx.font = `${fontSize}px serif`;
+      ctx.fillText(symbol, cx, cy);
+    } else if (chars.length <= 4) {
+      // grid: stack vertically or 2x2
+      const cols = chars.length <= 2 ? 1 : 2;
+      const rows = Math.ceil(chars.length / cols);
+      const cellW = size / cols;
+      const cellH = size / rows;
+      const fs = Math.floor(Math.min(cellW, cellH) * symbolRatio * 0.85);
+      ctx.font = `${fs}px serif`;
+      chars.forEach((ch, i) => {
+        const col = i % cols;
+        const row = Math.floor(i / cols);
+        ctx.fillText(ch,
+          x + cellW * col + cellW / 2 + offsetX,
+          y + cellH * row + cellH / 2 + offsetY
         );
-        document.getElementById("sl-razor-contrast").addEventListener("input", function () {
-          document.getElementById("val-razor-contrast").textContent = parseFloat(this.value).toFixed(1);
+      });
+    } else {
+      // long string: shrink to fit, single line, let it overflow at high ratios
+      const fs = Math.floor(size * symbolRatio / Math.sqrt(chars.length) * 0.75);
+      ctx.font = `${fs}px serif`;
+      ctx.fillText(symbol, cx, cy);
+    }
+  }
+
+  // ===== MAIN PROCESS =====
+  function processFrame(src8, vw, vh) {
+    const N = vw * vh;
+    extractLuma(src8, lumaBuf);
+
+    const paperWhite = parseInt(document.getElementById('s-paper').value);
+    const paper = processFrame._paper || (processFrame._paper = new Float32Array(N));
+    paper.fill(paperWhite);
+
+    // LAYER 1: GHOST WASH
+    const gLo = parseInt(document.getElementById('s-g-lo').value);
+    const gHi = parseInt(document.getElementById('s-g-hi').value);
+    const gBlur = parseInt(document.getElementById('s-g-blur').value);
+    const gOp = parseFloat(document.getElementById('s-g-op').value);
+    tonalMask(lumaBuf, ghostBuf, gLo, gHi);
+    if (gBlur > 0) fastBoxBlur(ghostBuf, blurTemp, vw, vh, gBlur);
+    if (gOp > 0) blendDarkenOnto(paper, ghostBuf, gOp);
+
+    // LAYER 2: MID BLOOM
+    const bLo = parseInt(document.getElementById('s-b-lo').value);
+    const bHi = parseInt(document.getElementById('s-b-hi').value);
+    const bBlur = parseInt(document.getElementById('s-b-blur').value);
+    const bOp = parseFloat(document.getElementById('s-b-op').value);
+    const bDx = parseInt(document.getElementById('s-b-dx').value);
+    const bDy = parseInt(document.getElementById('s-b-dy').value);
+    tonalMask(lumaBuf, bloomBuf, bLo, bHi);
+    if (bBlur > 0) fastBoxBlur(bloomBuf, blurTemp, vw, vh, bBlur);
+    if (bDx !== 0 || bDy !== 0) {
+      offsetDarker(bloomBuf, bloomDrift, vw, vh, bDx, bDy);
+      bloomBuf.set(bloomDrift);
+    }
+    if (bOp > 0) blendDarkenOnto(paper, bloomBuf, bOp);
+
+    // LAYER 3: BLACK STROKES
+    const sLo = parseInt(document.getElementById('s-s-lo').value);
+    const sHi = parseInt(document.getElementById('s-s-hi').value);
+    const edgeMode = document.getElementById('s-edgemode').value === '0' ? 'sobel' : 'fast';
+    const preBlur = parseInt(document.getElementById('s-s-preblur').value);
+    const sThresh = parseInt(document.getElementById('s-s-thresh').value);
+    const sDx = parseInt(document.getElementById('s-s-dx').value);
+    const sDy = parseInt(document.getElementById('s-s-dy').value);
+    const sCyc = parseInt(document.getElementById('s-s-cyc').value);
+    const poolIntensity = parseFloat(document.getElementById('s-s-pool').value);
+
+    tonalMask(lumaBuf, strokeBuf, sLo, sHi);
+    if (preBlur > 0) fastBoxBlur(strokeBuf, blurTemp, vw, vh, preBlur);
+
+    if (edgeMode === 'sobel') {
+      sobelMagnitude(strokeBuf, sobelGx, sobelGy, strokeTemp, vw, vh);
+    } else {
+      fastEdge(strokeBuf, blurTemp, strokeTemp, vw, vh, Math.max(1, preBlur || 2));
+    }
+
+    for (let i = 0; i < N; i++) {
+      const mag = strokeTemp[i];
+      const inkW = mag <= sThresh ? 0 : Math.min(1, (mag - sThresh) / (255 - sThresh));
+      strokeBuf[i] = 255 - (inkW * 255);
+    }
+    fastBoxBlur(strokeBuf, blurTemp, vw, vh, 1);
+
+    for (let c = 0; c < sCyc; c++) {
+      offsetDarker(strokeBuf, strokeDrift, vw, vh, sDx, sDy);
+      strokeBuf.set(strokeDrift);
+    }
+
+    if (poolIntensity > 0) {
+      for (let i = 0; i < N; i++) poolBuf[i] = 255 - strokeBuf[i];
+      fastBoxBlur(poolBuf, blurTemp, vw, vh, 2);
+      for (let i = 0; i < N; i++) {
+        const p = Math.min(60, poolBuf[i] * poolIntensity);
+        strokeBuf[i] = Math.max(0, strokeBuf[i] - p);
+      }
+    }
+
+    blendDarkenOnto(paper, strokeBuf, 1.0);
+
+    const contrastPct = parseInt(document.getElementById('s-contrast').value) / 100;
+    for (let i = 0; i < N; i++) {
+      let v = (paper[i] - 128) * contrastPct + 128;
+      paper[i] = v < 0 ? 0 : v > 255 ? 255 : v;
+    }
+
+    const dst8 = outImgData.data;
+    let j = 0;
+    for (let i = 0; i < N; i++) {
+      const v = paper[i] | 0;
+      dst8[j] = v; dst8[j+1] = v; dst8[j+2] = v; dst8[j+3] = 255;
+      j += 4;
+    }
+  }
+
+  // ===== RENDER LOOP =====
+  function drawFrame() {
+    if (!animationRunning) return;
+
+    let vw, vh, src8;
+
+    if (frozen && frozenFrame) {
+      vw = frozenFrame.width; vh = frozenFrame.height;
+      src8 = frozenFrame.data;
+    } else {
+      if (video.readyState < 2) { requestAnimationFrame(drawFrame); return; }
+      vw = video.videoWidth;
+      vh = video.videoHeight;
+      if (vw === 0 || vh === 0) { requestAnimationFrame(drawFrame); return; }
+      offCtx.drawImage(video, 0, 0, vw, vh);
+      const sourceData = offCtx.getImageData(0, 0, vw, vh);
+      src8 = sourceData.data;
+    }
+
+    if (outputCanvas.width !== vw || outputCanvas.height !== vh) {
+      outputCanvas.width = offCanvas.width = vw;
+      outputCanvas.height = offCanvas.height = vh;
+      const N = vw * vh;
+      lumaBuf = new Uint8Array(N);
+      blurTemp = new Uint8Array(N);
+      ghostBuf = new Uint8Array(N);
+      bloomBuf = new Uint8Array(N);
+      bloomDrift = new Uint8Array(N);
+      strokeBuf = new Uint8Array(N);
+      strokeTemp = new Uint8Array(N);
+      strokeDrift = new Uint8Array(N);
+      poolBuf = new Uint8Array(N);
+      sobelGx = new Uint8Array(N);
+      sobelGy = new Uint8Array(N);
+      outImgData = oCtx.createImageData(vw, vh);
+      processFrame._paper = null;
+      sobelMagnitude._tmp = null;
+      fastEdge._tmp = null;
+    }
+
+    processFrame(src8, vw, vh);
+    oCtx.putImageData(outImgData, 0, 0);
+
+    if (document.getElementById('s-hanko').value === '1') {
+      drawHanko(oCtx, vw, vh);
+    }
+
+    frameCount++;
+    requestAnimationFrame(drawFrame);
+  }
+
+  function renderLoop(timestamp) {
+    if (!animationRunning) return;
+    if (timestamp - lastFpsTime >= 1000) {
+      fpsSpan.textContent = frameCount + ' fps';
+      frameCount = 0;
+      lastFpsTime = timestamp;
+    }
+    drawFrame();
+  }
+
+  // ===== CAMERA =====
+  async function initCamera() {
+    if (activeStream) activeStream.getTracks().forEach(t => t.stop());
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: { exact: 'environment' }, width: { ideal: 1280 }, height: { ideal: 720 } }
+      });
+      activeStream = stream;
+      video.srcObject = stream;
+      await video.play();
+      startScreen.style.display = 'none';
+      animationRunning = true;
+      frozen = false;
+      frameCount = 0;
+      lastFpsTime = performance.now();
+      requestAnimationFrame(renderLoop);
+    } catch (err) {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } }
         });
-        document.getElementById("sl-sat").addEventListener("input", function () {
-          document.getElementById("val-sat").textContent = parseFloat(this.value).toFixed(1);
-        });
-      
-        // Dither slider displays
-        document.getElementById("sl-dpx").addEventListener("input", function () {
-          document.getElementById("val-dpx").textContent = this.value;
-        });
-        document.getElementById("sl-spread").addEventListener("input", function () {
-          document.getElementById("val-spread").textContent = this.value;
-        });
-        document.getElementById("sl-dbands").addEventListener("input", function () {
-          document.getElementById("val-dbands").textContent = this.value;
-        });
-        document.getElementById("sl-dcontrast").addEventListener("input", function () {
-          document.getElementById("val-dcontrast").textContent = parseFloat(this.value).toFixed(1);
-        });
-        document.getElementById("sl-sgap").addEventListener("input", function () {
-          document.getElementById("val-sgap").textContent = this.value;
-          updateScanlineStyle();
-        });
-        document.getElementById("sl-hue").addEventListener("input", function () {
-          document.getElementById("val-hue").textContent = this.value;
-        });
-      
-        document.getElementById("btn-dither-reset").addEventListener("click", () => {
-          ui.dpx.value = "4";
-          ui.spread.value = "50";
-          ui.dbands.value = "4";
-          ui.dcontrast.value = "1.0";
-          ui.sgap.value = "4";
-          ui.hue.value = "0";
-          ui.mode.value = "color";
-          document.getElementById("val-dpx").textContent = "4";
-          document.getElementById("val-spread").textContent = "50";
-          document.getElementById("val-dbands").textContent = "4";
-          document.getElementById("val-dcontrast").textContent = "1.0";
-          document.getElementById("val-sgap").textContent = "4";
-          document.getElementById("val-hue").textContent = "0";
-          updateScanlineStyle();
-        });
-        document.getElementById("btn-scanlines").addEventListener("click", toggleScanlines);
-      
-        updateScanlineStyle();
-        setEngine("monklin");
-      })();
-    </script>
-  </body>
+        activeStream = stream;
+        video.srcObject = stream;
+        await video.play();
+        startScreen.style.display = 'none';
+        animationRunning = true;
+        frozen = false;
+        frameCount = 0;
+        lastFpsTime = performance.now();
+        requestAnimationFrame(renderLoop);
+      } catch (err2) {
+        startScreen.innerHTML = `<p>◢ SUMI-E DAEMON ◣<br>⚠️ CAMERA ERROR<br>${err2.message.substring(0, 50)}</p>`;
+      }
+    }
+  }
+
+  // ===== HANKO DRAG / PINCH =====
+  let hankoTouch = null;
+
+  function canvasToFrame(clientX, clientY) {
+    const rect = outputCanvas.getBoundingClientRect();
+    const fx = (clientX - rect.left) / rect.width;
+    const fy = (clientY - rect.top) / rect.height;
+    return { x: fx * outputCanvas.width, y: fy * outputCanvas.height };
+  }
+
+  function pointInHanko(px, py) {
+    const { x, y, size } = getHankoBox(outputCanvas.width, outputCanvas.height);
+    const pad = size * 0.3;
+    return px >= x - pad && px <= x + size + pad && py >= y - pad && py <= y + size + pad;
+  }
+
+  function dist(t1, t2) {
+    const dx = t1.clientX - t2.clientX;
+    const dy = t1.clientY - t2.clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  outputCanvas.addEventListener('touchstart', (e) => {
+    if (!outputCanvas.width) return;
+    if (e.touches.length === 1) {
+      const p = canvasToFrame(e.touches[0].clientX, e.touches[0].clientY);
+      if (pointInHanko(p.x, p.y)) {
+        e.preventDefault();
+        hankoTouch = { mode: 'drag' };
+      }
+    } else if (e.touches.length === 2) {
+      const c1 = canvasToFrame(e.touches[0].clientX, e.touches[0].clientY);
+      const c2 = canvasToFrame(e.touches[1].clientX, e.touches[1].clientY);
+      const midX = (c1.x + c2.x) / 2, midY = (c1.y + c2.y) / 2;
+      if (pointInHanko(midX, midY) || hankoTouch) {
+        e.preventDefault();
+        hankoTouch = {
+          mode: 'pinch',
+          startDist: dist(e.touches[0], e.touches[1]),
+          startRatio: hankoSizeRatio
+        };
+      }
+    }
+  }, { passive: false });
+
+  outputCanvas.addEventListener('touchmove', (e) => {
+    if (!hankoTouch) return;
+    e.preventDefault();
+    if (hankoTouch.mode === 'drag' && e.touches.length === 1) {
+      const p = canvasToFrame(e.touches[0].clientX, e.touches[0].clientY);
+      hankoX = p.x / outputCanvas.width;
+      hankoY = p.y / outputCanvas.height;
+    } else if (hankoTouch.mode === 'pinch' && e.touches.length === 2) {
+      const d = dist(e.touches[0], e.touches[1]);
+      const scale = d / hankoTouch.startDist;
+      hankoSizeRatio = Math.min(0.4, Math.max(0.03, hankoTouch.startRatio * scale));
+    }
+  }, { passive: false });
+
+  outputCanvas.addEventListener('touchend', (e) => {
+    if (e.touches.length === 0) hankoTouch = null;
+  });
+  outputCanvas.addEventListener('touchcancel', () => { hankoTouch = null; });
+
+  // ===== UI =====
+  function clampDual(loEl, hiEl, isLo) {
+    let lo = parseInt(loEl.value);
+    let hi = parseInt(hiEl.value);
+    if (lo > hi) {
+      if (isLo) hiEl.value = lo; else loEl.value = hi;
+    }
+  }
+
+  function updateDualFill(loEl, hiEl, fillEl) {
+    const lo = parseInt(loEl.value);
+    const hi = parseInt(hiEl.value);
+    const pct1 = (lo / 255) * 100;
+    const pct2 = (hi / 255) * 100;
+    fillEl.style.left = pct1 + '%';
+    fillEl.style.width = (pct2 - pct1) + '%';
+  }
+
+  function updateUI() {
+    clampDual(document.getElementById('s-g-lo'), document.getElementById('s-g-hi'), true);
+    document.getElementById('v-g-range').textContent =
+      document.getElementById('s-g-lo').value + '–' + document.getElementById('s-g-hi').value;
+    updateDualFill(document.getElementById('s-g-lo'), document.getElementById('s-g-hi'), document.getElementById('fill-ghost'));
+    document.getElementById('v-g-blur').textContent = document.getElementById('s-g-blur').value;
+    document.getElementById('v-g-op').textContent = parseFloat(document.getElementById('s-g-op').value).toFixed(2);
+
+    clampDual(document.getElementById('s-b-lo'), document.getElementById('s-b-hi'), true);
+    document.getElementById('v-b-range').textContent =
+      document.getElementById('s-b-lo').value + '–' + document.getElementById('s-b-hi').value;
+    updateDualFill(document.getElementById('s-b-lo'), document.getElementById('s-b-hi'), document.getElementById('fill-bloom'));
+    document.getElementById('v-b-blur').textContent = document.getElementById('s-b-blur').value;
+    document.getElementById('v-b-op').textContent = parseFloat(document.getElementById('s-b-op').value).toFixed(2);
+    document.getElementById('v-b-dx').textContent = document.getElementById('s-b-dx').value;
+    document.getElementById('v-b-dy').textContent = document.getElementById('s-b-dy').value;
+
+    clampDual(document.getElementById('s-s-lo'), document.getElementById('s-s-hi'), true);
+    document.getElementById('v-s-range').textContent =
+      document.getElementById('s-s-lo').value + '–' + document.getElementById('s-s-hi').value;
+    updateDualFill(document.getElementById('s-s-lo'), document.getElementById('s-s-hi'), document.getElementById('fill-stroke'));
+    document.getElementById('v-edgemode').textContent = document.getElementById('s-edgemode').value === '0' ? 'SOBEL' : 'FAST';
+    document.getElementById('v-s-preblur').textContent = document.getElementById('s-s-preblur').value;
+    document.getElementById('v-s-thresh').textContent = document.getElementById('s-s-thresh').value;
+    document.getElementById('v-s-dx').textContent = document.getElementById('s-s-dx').value;
+    document.getElementById('v-s-dy').textContent = document.getElementById('s-s-dy').value;
+    document.getElementById('v-s-cyc').textContent = document.getElementById('s-s-cyc').value;
+    document.getElementById('v-s-pool').textContent = parseFloat(document.getElementById('s-s-pool').value).toFixed(2);
+
+    document.getElementById('v-paper').textContent = document.getElementById('s-paper').value;
+    document.getElementById('v-contrast').textContent = document.getElementById('s-contrast').value;
+    document.getElementById('v-hanko').textContent = document.getElementById('s-hanko').value === '1' ? 'ON' : 'OFF';
+
+    // break controls
+    document.getElementById('v-hanko-ratio').textContent = document.getElementById('s-hanko-ratio').value + '%';
+    document.getElementById('v-hanko-bw').textContent = document.getElementById('s-hanko-bw').value + '%';
+    document.getElementById('v-hanko-op').textContent = document.getElementById('s-hanko-op').value + '%';
+    document.getElementById('v-hanko-ox').textContent = document.getElementById('s-hanko-ox').value;
+    document.getElementById('v-hanko-oy').textContent = document.getElementById('s-hanko-oy').value;
+  }
+
+  function togglePanel() {
+    bottomSheet.classList.toggle('open');
+    pullTab.textContent = bottomSheet.classList.contains('open') ? '▾ UI' : '▴ UI';
+  }
+
+  function toggleFreeze() {
+    if (!frozen) {
+      const vw = video.videoWidth, vh = video.videoHeight;
+      if (vw === 0 || vh === 0) return;
+      offCanvas.width = vw; offCanvas.height = vh;
+      offCtx.drawImage(video, 0, 0, vw, vh);
+      frozenFrame = offCtx.getImageData(0, 0, vw, vh);
+      frozen = true;
+      document.getElementById('freeze-btn').textContent = 'UNFREEZE';
+      document.getElementById('freeze-btn').classList.remove('red');
+      document.getElementById('freeze-btn').classList.add('green');
+    } else {
+      frozen = false;
+      frozenFrame = null;
+      document.getElementById('freeze-btn').textContent = 'FREEZE';
+      document.getElementById('freeze-btn').classList.remove('green');
+      document.getElementById('freeze-btn').classList.add('red');
+    }
+  }
+
+  function saveSnapshot() {
+    if (!outputCanvas.width) return;
+    const link = document.createElement('a');
+    link.download = `SUMI_${Date.now()}.png`;
+    link.href = outputCanvas.toDataURL('image/png');
+    link.click();
+  }
+
+  function loadImageFile(file) {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      // stop camera stream, use image as frozen frame
+      if (activeStream) { activeStream.getTracks().forEach(t => t.stop()); activeStream = null; }
+      const iw = img.naturalWidth, ih = img.naturalHeight;
+      offCanvas.width = iw; offCanvas.height = ih;
+      offCtx.drawImage(img, 0, 0, iw, ih);
+      frozenFrame = offCtx.getImageData(0, 0, iw, ih);
+      frozen = true;
+      URL.revokeObjectURL(url);
+      startScreen.style.display = 'none';
+      document.getElementById('freeze-btn').textContent = 'UNFREEZE';
+      document.getElementById('freeze-btn').classList.remove('red');
+      document.getElementById('freeze-btn').classList.add('green');
+      if (!animationRunning) {
+        animationRunning = true;
+        frameCount = 0;
+        lastFpsTime = performance.now();
+        requestAnimationFrame(renderLoop);
+      }
+    };
+    img.src = url;
+  }
+
+  function setupUI() {
+    startBtn.onclick = () => initCamera();
+    document.getElementById('cam-btn').onclick = () => initCamera();
+    document.getElementById('upload-btn').onclick = () => document.getElementById('file-input').click();
+    document.getElementById('file-input').onchange = (e) => { if (e.target.files[0]) loadImageFile(e.target.files[0]); e.target.value = ''; };
+    document.getElementById('freeze-btn').onclick = () => toggleFreeze();
+    document.getElementById('save-btn').onclick = () => saveSnapshot();
+    pullTab.onclick = () => togglePanel();
+
+    const sliders = document.querySelectorAll('input[type="range"]');
+    sliders.forEach(s => s.addEventListener('input', updateUI));
+    document.getElementById('s-hanko-text').addEventListener('input', updateUI);
+    updateUI();
+  }
+
+  setupUI();
+</script>
+</body>
 </html>
